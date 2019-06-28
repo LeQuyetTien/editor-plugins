@@ -1,0 +1,25 @@
+{
+  "name": "editor-plugins",
+  "version": "0.1.0",
+  "description": "Editor Plugins",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeQuyetTien/editor-plugins.git"
+  },
+  "keywords": [
+    "editor"
+  ],
+  "author": "Le Quyet Tien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeQuyetTien/editor-plugins/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/LeQuyetTien/editor-plugins#readme"
+}
