@@ -1,6 +1,6 @@
 {
   "name": "editor-plugins",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Editor Plugins",
   "main": "dist/index.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "url": "git+https://github.com/LeQuyetTien/editor-plugins.git"
   },
   "keywords": [
-    "editor"
+    "javascript",
+    "datatables",
+    "editor",
+    "plugins"
   ],
   "author": "Le Quyet Tien",
   "license": "ISC",
