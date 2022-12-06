@@ -65,10 +65,10 @@ _fieldTypes.telephone = {
                 dropdownContainer: document.body
             }, conf.opts);
  
-            conf._tel = conf._input.intlTelInput(options);
+            conf._tel = intlTelInput(conf._input[0], options);
  
             if (conf._initSet) {
-                conf._tel.intlTelInput('setNumber', conf._initSet);
+                conf._tel.setNumber(conf._initSet);
             }
         });
  
@@ -76,7 +76,14 @@ _fieldTypes.telephone = {
     },
  
     get: function (conf) {
-        return conf._tel.intlTelInput('getNumber', intlTelInputUtils.numberFormat.INTERNATIONAL);
+        var phone = {
+            nationalNumber: conf._tel.getNumber(intlTelInputUtils.numberFormat.NATIONAL),
+            internationalNumber: conf._tel.getNumber(intlTelInputUtils.numberFormat.INTERNATIONAL),
+            isoCode: conf._tel.getSelectedCountryData().iso2,
+            dialCode: conf._tel.getSelectedCountryData().dialCode,
+            isValid: conf._tel.isValidNumber()
+        };
+        return phone;
     },
  
     set: function (conf, val) {
@@ -84,8 +91,7 @@ _fieldTypes.telephone = {
             conf._initSet = val;
         }
         else {
-            conf._tel.intlTelInput('setCountry', conf.opts.initialCountry || '');
-            conf._tel.intlTelInput('setNumber', val);
+            conf._tel.setNumber(val);
         }
     },
  
